@@ -119,7 +119,7 @@ class Fun(commands.Cog):
             return await msg.send(f"There is still {round(timer/120,3)} more hours before you can use the command again")
 
         await self.createUserData(msg.author.id)
-        self.localData['daily'] += time.time()+ 86400
+        self.localData[msg.author.id]['daily'] += time.time()+ 86400
         self.localData[msg.author.id]['cash'] +=dailyValue
         return await msg.send("Daily reward claimed")
 
